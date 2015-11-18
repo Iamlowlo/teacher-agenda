@@ -7,6 +7,9 @@ var App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
+Ember.deprecate = function(){};
+Ember.warn = function(i){};
+
 App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
