@@ -1,0 +1,23 @@
+@import 'reset';
+@import 'fonts';
+@import 'variables';
+@import 'utils';
+@import 'mixins';
+
+@import 'components/main-nav';
+@import 'components/collapsible-table';
+
+body{
+  font-family: $font_family_main;
+}
+#main_header{
+  background: $color_4;
+  padding: 1.5em 1.5em 0.5em;
+  border-bottom: 2px solid $color_3;
+  h1{
+    color: white;
+    text-shadow: 1px 1px 0 $color_3;
+    font-size: 1.8em;
+    padding-bottom: 0.3em;
+  }
+}

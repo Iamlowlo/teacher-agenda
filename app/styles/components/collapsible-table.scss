@@ -1,0 +1,33 @@
+.collapsible_table{
+  .placeholder{
+    display: inline-block;
+  }
+  .header_cell{
+    &.active{
+      display:none;
+    }
+  }
+  .row{
+  }
+  .cell{
+    text-align: center;
+    padding: 0.2em 0.5em;
+  }
+  @media (min-width: em($bp_md)){
+    display: table;
+    .placeholder{
+      display: none;
+    }
+    .header,
+    .content{
+      display:table-row-group;
+    }
+    .row{
+      display: table-row;
+    }
+    .cell{
+      display: table-cell;
+      border-bottom: 1px solid $color_2;
+    }
+  }
+}

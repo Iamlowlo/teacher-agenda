@@ -1,0 +1,17 @@
+{{yield}}
+<ul class="header">
+  {{collapsible-table-header-gap placeholder=placeholder}}
+  {{#each cols as |column index|}}
+  {{collapsible-table-header-cell value=column index=index selected=selected changeSelected=(action 'changeSelected')}}
+  {{/each}}
+</ul>
+<ul class="content">
+  {{#each rows as |row|}}
+  <li class="row">
+    <div class="cell content_heading">{{row}}</div>
+    {{#each cols as |column index|}}
+    <div class="cell content_cell">{{index}}</div>
+    {{/each}}
+  </li>
+  {{/each}}
+</ul>
