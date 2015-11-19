@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-var Timetable =  DS.Model.extend({
+var Timeconfig =  DS.Model.extend({
   startTimeHours : DS.attr('integer'),
   startTimeMinutes : DS.attr('integer'),
   endTimeHours : DS.attr('integer'),
@@ -10,10 +10,10 @@ var Timetable =  DS.Model.extend({
   dayQty : DS.attr('integer')
 });
 
-Timetable.reopenClass({
+Timeconfig.reopenClass({
   FIXTURES : [
     {
-      id: 1,
+      id: 0,
       startTimeHours: 8,
       startTimeMinutes: 0,
       endTimeHours: 21,
@@ -25,4 +25,4 @@ Timetable.reopenClass({
   ]
 });
 
-export default Timetable;
+export default Timeconfig;

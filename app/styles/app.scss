@@ -21,3 +21,16 @@ body{
     padding-bottom: 0.3em;
   }
 }
+#teacher_agenda{
+  .template_header{
+    padding: 2em 2em 1.5em;
+    h1{
+      font-size: 1.5em;
+      font-weight: 700;
+      color:$color_3;
+    }
+  }
+  .collapsible_table{
+    margin: 0 auto;
+  }
+}

@@ -25,6 +25,7 @@ export default Ember.Mixin.create({
       i = (i==this.weekDays.length)?0:i;
       availableDays.push(this.weekDays[i]);
     };
+    this.weekDays=availableDays;
     return availableDays;
   }
 });

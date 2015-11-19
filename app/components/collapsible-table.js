@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   actions: {
     changeSelected(index, value){
       this.set('selected',index);
-      this.set('selectedValue',value);
+      this.set('placeholder',value);
     }
   }
 });

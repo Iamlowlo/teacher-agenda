@@ -1,33 +1,104 @@
 .collapsible_table{
-  .placeholder{
-    display: inline-block;
-  }
-  .header_cell{
-    &.active{
-      display:none;
+  padding:0 2em;
+  .placeholder_container{
+    padding: 0.4em;
+    margin-bottom: 0.5em; 
+    border:1px solid $color_2;
+    text-align: center;
+    cursor: pointer;
+    background: $color_4;
+    color: white;
+    &:hover{
+      background: $color_3;
     }
   }
-  .row{
+  .placeholder{
+    position: relative;
+    .icon-keyboard_arrow_down{
+      transition: transform 0.4s ease-in;
+      position: absolute;
+      left: 100%;
+    }
   }
   .cell{
     text-align: center;
-    padding: 0.2em 0.5em;
+    padding: 0.5em;
+  }
+  @media (max-width: em($bp_md+1)){
+    .header{
+      overflow: hidden;
+      max-height: 0;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 0 2em;
+      margin-top: -0.5em;
+      transition: max-height 0.4s ease-in;
+      &.active{
+        max-height: 999px;
+      }
+      &>li:first-child{
+        display: none;
+      }
+    }
+    .header_cell{
+      background: white;
+      border:1px solid $color_2;
+      border-top: none;
+      cursor: pointer;
+      &:hover{
+        background: $color_5;
+      }
+      &.active{
+        display:none;
+      }
+    }
+    .content{
+      .row{
+        display: table;
+        width: 100%;
+        border: 1px solid $color_2;
+        &:not(:last-child){
+          border-bottom: none;
+        }
+      }
+      .cell{
+        display: table-cell;
+      }
+      .content_heading{
+        width: 150px;
+        border-right: 1px solid $color_2;
+      }
+    }
+    .content_cell{
+      &:not(.active){
+        display:none;
+      }
+    }
   }
   @media (min-width: em($bp_md)){
     display: table;
-    .placeholder{
-      display: none;
-    }
-    .header,
-    .content{
-      display:table-row-group;
-    }
     .row{
       display: table-row;
     }
     .cell{
       display: table-cell;
       border-bottom: 1px solid $color_2;
+    }
+    .placeholder_container{
+      display: none;
+    }
+    .header,
+    .content{
+      display:table-row-group;
+    }
+    .content{
+      .cell{
+        border-right: 1px solid $color_2;
+        &:first-child{
+          border-left: 1px solid $color_2;
+        } 
+      }
     }
   }
 }

@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   classNames: ['cell', 'header_cell'],
   classNameBindings : ['isActive:active'],
   index:-1,
-  selectedBinding: 'parentView.selected',
   isActive : Ember.computed(function(){
     return this.selected===this.index;
   }),
@@ -14,5 +13,6 @@ export default Ember.Component.extend({
     }),
   click(){
     this.get('changeSelected')(this.get('index'),this.get('value'));
+    $(this.element).closest('.header').removeClass('active');
   }
 });
