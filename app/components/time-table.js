@@ -9,6 +9,7 @@ const TimeTable = Ember.Component.extend(TimeRelativeMixin,{
         var store = this.get('store');
         var self = this;
         store.findRecord('time-config',0).then(function(timetableData){
+          console.log(timetableData)
           var timeMarkers = [];
           var startTime = timetableData.get('startTimeHours') + self.sexToDec(timetableData.get('startTimeMinutes'));
           var endTime = timetableData.get('endTimeHours') + self.sexToDec(timetableData.get('endTimeMinutes'));

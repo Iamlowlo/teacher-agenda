@@ -1,13 +1,13 @@
 import DS from 'ember-data';
 
 var Timeconfig =  DS.Model.extend({
-  startTimeHours : DS.attr('integer'),
-  startTimeMinutes : DS.attr('integer'),
-  endTimeHours : DS.attr('integer'),
-  endTimeMinutes : DS.attr('integer'),
-  gap : DS.attr('integer'),
-  dayStart : DS.attr('integer'),
-  dayQty : DS.attr('integer')
+  startTimeHours : DS.attr(),
+  startTimeMinutes : DS.attr(),
+  endTimeHours : DS.attr(),
+  endTimeMinutes : DS.attr(),
+  gap : DS.attr(),
+  dayStart : DS.attr(),
+  dayQty : DS.attr()
 });
 
 Timeconfig.reopenClass({

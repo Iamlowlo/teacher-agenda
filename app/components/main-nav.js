@@ -4,6 +4,9 @@ export default Ember.Component.extend({
   tagName : 'nav',
   classNames : ['main_nav'],
   test : 'function',
+  model(){
+  	return this.store.findAll('mainNav');
+  },
   navigation : [{ route : 'index',
                   name : 'Index'},
                 { route : 'timetable',
