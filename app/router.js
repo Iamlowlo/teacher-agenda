@@ -8,6 +8,8 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('timetable');
   this.route('alumns');
+  this.route('centers');
+  this.route('classes');
 });
 
 export default Router;

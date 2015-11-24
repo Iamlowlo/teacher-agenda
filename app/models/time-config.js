@@ -1,28 +1,13 @@
 import DS from 'ember-data';
 
 var Timeconfig =  DS.Model.extend({
-  startTimeHours : DS.attr(),
-  startTimeMinutes : DS.attr(),
-  endTimeHours : DS.attr(),
-  endTimeMinutes : DS.attr(),
-  gap : DS.attr(),
-  dayStart : DS.attr(),
-  dayQty : DS.attr()
-});
-
-Timeconfig.reopenClass({
-  FIXTURES : [
-    {
-      id: 0,
-      startTimeHours: 8,
-      startTimeMinutes: 0,
-      endTimeHours: 21,
-      endTimeMinutes: 0, 
-      gap: 30,
-      dayStart: 6,
-      dayQty : 7 
-    }
-  ]
+  startTimeHours : DS.attr('number'),
+  startTimeMinutes : DS.attr('number'),
+  endTimeHours : DS.attr('number'),
+  endTimeMinutes : DS.attr('number'),
+  gap : DS.attr('number'),
+  dayStart : DS.attr('number'),
+  dayQty : DS.attr('number')
 });
 
 export default Timeconfig;

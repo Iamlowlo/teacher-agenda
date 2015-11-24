@@ -1,10 +1,15 @@
 {{yield}}
 {{#each alumns as |alumn|}}
 <li>{{alumn.fullName}}
-  <ul>
-  {{#each alumn.classes as |class|}}
-    {{alumn-class-info class=class}}
-  {{/each}}
-  </ul>
+    <ul>
+    {{#each alumn.class_ids as |class_id|}}
+      {{alumn-class-info class=class_id center=class_id.center_id}}
+      {{#each class_id.center_id as |center_id|}}
+        <p>Id {{center_id.id}}</p>
+        <p>Name {{center_id.name}}</p>
+        <p>Street {{center_id.address}}</p>
+      {{/each}}
+    {{/each}}
+    </ul>
 </li>
 {{/each}}
