@@ -1,0 +1,15 @@
+{{yield}}
+{{#each alumns as |alumn|}}
+<li>{{alumn.fullName}}
+    <ul>
+    {{#each alumn.classunit as |class_id|}}
+      {{alumn-class-info class=class_id center=class_id.center_id}}
+      {{#each classunit.center as |center_id|}}
+        <p>Id {{center_id}}</p>
+        <p>Name {{center_id.name}}</p>
+        <p>Street {{center_id.address}}</p>
+      {{/each}}
+    {{/each}}
+    </ul>
+</li>
+{{/each}}

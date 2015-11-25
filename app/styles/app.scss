@@ -1,0 +1,36 @@
+@import 'reset';
+@import 'fonts';
+@import 'variables';
+@import 'utils';
+@import 'mixins';
+
+@import 'components/main-nav';
+@import 'components/collapsible-table';
+
+body{
+  font-family: $font_family_main;
+}
+#main_header{
+  background: $color_4;
+  padding: 1.5em 1.5em 0.5em;
+  border-top: 10px solid $color_3;
+  h1{
+    color: white;
+    text-shadow: 1px 1px 0 $color_3;
+    font-size: 1.8em;
+    padding-bottom: 0.3em;
+  }
+}
+#teacher_agenda{
+  .template_header{
+    padding: 2em 2em 1.5em;
+    h1{
+      font-size: 1.5em;
+      font-weight: 700;
+      color:$color_3;
+    }
+  }
+  .collapsible_table{
+    margin: 0 auto;
+  }
+}

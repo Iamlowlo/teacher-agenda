@@ -1,0 +1,7 @@
+{{yield}}
+{{menu-toggler}}
+<ul class="togglable">
+  {{#each navigation as |navElement|}}
+  <li>{{#link-to navElement.route}}{{navElement.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>

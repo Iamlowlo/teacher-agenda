@@ -1,0 +1,20 @@
+{{collapsible-table-header-gap placeholder=placeholder}}
+<ul class="header">
+  <li class="cell"></li>
+  {{#each cols as |column index|}}
+    {{collapsible-table-header-cell value=column index=index selected=selected changeSelected=(action 'changeSelected')}}
+  {{/each}}
+</ul>
+<ul class="content">
+  {{#each rows as |row row_index|}}
+  <li class="row">
+    <div class="cell content_heading">{{row}}</div>
+    {{#each cols as |column column_index|}}
+    {{#collapsible-table-content-cell column_index=column_index selected=selected row_index=row_index}}
+      {{#link-to 'index'}}{{column_index}}.{{row_index}}{{/link-to}}
+    {{/collapsible-table-content-cell}}
+    {{/each}}
+  </li>
+  {{/each}}
+</ul>
+{{yield}}

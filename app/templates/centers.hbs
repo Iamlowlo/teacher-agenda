@@ -1,0 +1,19 @@
+<div class="template_header">
+  <h1>Centers</h1>
+</div>
+{{#each model as |center|}}
+<p>{{center.name}}</p>
+<p>{{center.address}}</p>
+<p>{{center.phone}}</p>
+<p>Classes</p>
+<ul>
+	{{#each center.classunit as |classunit|}}
+	<li>Day: {{classunit.day}}</li>
+	<li>Start: {{classunit.startTimeHours}}:{{classunit.startTimeMinutes}}</li>
+	<li>End: {{classunit.endTimeHours}}:{{classunit.endTimeMinutes}}</li>
+	<li>Alumn: {{classunit.alumn.fullName}}</li>
+	{{/each}}
+</ul>
+<br>
+{{/each}}
+{{outlet}}
