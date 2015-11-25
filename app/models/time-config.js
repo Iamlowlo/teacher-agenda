@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
+var Timeconfig =  DS.Model.extend({
   startTimeHours : DS.attr('number'),
   startTimeMinutes : DS.attr('number'),
   endTimeHours : DS.attr('number'),
@@ -9,3 +9,5 @@ export default DS.Model.extend({
   dayStart : DS.attr('number'),
   dayQty : DS.attr('number')
 });
+
+export default Timeconfig;

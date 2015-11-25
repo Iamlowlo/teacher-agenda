@@ -13,7 +13,6 @@ test('it renders', function(assert) {
   this.render(hbs`{{alumn-list}}`);
 
   assert.equal(this.$().text().trim(), '');
-
   // Template block usage:" + EOL +
   this.render(hbs`
     {{#alumn-list}}

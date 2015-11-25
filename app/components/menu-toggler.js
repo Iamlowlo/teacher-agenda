@@ -1,5 +1,5 @@
 import Ember from 'ember';
-var $ = Ember.$;
+import $ from Ember.$;
 
 export default Ember.Component.extend({
   click : function(e){
