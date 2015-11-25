@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import $ from Ember.$;
+let $ = Ember.$;
 
 export default Ember.Component.extend({
   tagName : 'nav',
