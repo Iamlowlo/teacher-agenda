@@ -1,0 +1,59 @@
+.dropable_list{
+  padding:0 2em;
+  .dropable_list_element{
+    border:1px solid $color_4;
+    cursor: pointer;
+    color: $color_2;
+    &:not(:last-child){
+      border-bottom: none;
+    }
+    .main_info{
+      position: relative;
+      display: block;
+      padding: 0.5em 1.5em 0.5em 1em;
+      &:hover{
+        background: $color_2;
+        color: white;
+      }
+    }
+    .icon-keyboard_arrow_down{
+      position: absolute;
+      display: block;
+      height: 1em;
+      width: 1em;
+      right: 0.5em;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      transition: transform 0.4s ease-in;
+    }
+  }
+  .dropable_info{
+    overflow: hidden;
+    height: 0;
+    padding: 0 1em;
+    li{
+      font-size: 0.8em;
+      color: $color_1;
+      padding-top: 0.8em;
+      &:first-child{
+        padding-top: 1.2em;
+      }
+      &:not(:last-child){
+        border-bottom: 1px solid $color_4;
+        padding-bottom: 0.2em;
+      }
+    }
+    &.active{
+      border-top: 1px solid $color_5;
+      height: auto;
+      padding-bottom: 0.8em;
+    }
+  }
+  @media (max-width: em($bp_md+1)){
+    
+  }
+  @media (min-width: em($bp_md)){
+    
+  }
+}

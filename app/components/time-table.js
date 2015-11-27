@@ -5,26 +5,37 @@ import TimeRelativeMixin from '../mixins/time-relative';
 export default Ember.Component.extend(TimeRelativeMixin,{
       tagName : 'section',
       classNames : ['time_table'],
-      store : Ember.inject.service(),
+      initialIndex : Ember.computed.alias('config.dayStart'),
+      availableDays : Ember.computed(function(){
+        return this.getAvailableDays(this.get('config').get('dayStart'),this.get('config').get('dayQty'));
+      }),
+      placeholder : Ember.computed(function(){
+        return this.get('availableDays').objectAt(0);
+      }),
+      gap : Ember.computed(function(){
+        return this.sexToDec(this.get('config').get('gap'));
+      }),
+      startTime : Ember.computed(function(){
+        return this.get('config').get('startTimeHours')+this.sexToDec(this.get('config').get('startTimeMinutes'));
+      }),
+      endTime : Ember.computed(function(){
+        return this.get('config').get('endTimeHours')+this.sexToDec(this.get('config').get('endTimeMinutes'));
+      }),
       timeMarkers: Ember.computed(function(){
-
+        var timeMarkers=[];
+        var gap = this.sexToDec(this.get('config').get('gap'));
+        for (var marker = this.get('startTime'); marker < this.get('endTime'); marker+=this.get('gap')) {
+          timeMarkers.push(this.hourBuilder(marker)+' - '+this.hourBuilder(marker+gap));
+        }
+        return timeMarkers;
       }),
       onDidInsertElement : function(){
-        var store = this.get('store');
-        var self = this;
-        store.findAll('timeconfig').then(function(timetableData){
-          console.log(timetableData)
-          var timeMarkers = [];
-          var startTime = timetableData.get('startTimeHours') + self.sexToDec(timetableData.get('startTimeMinutes'));
-          var endTime = timetableData.get('endTimeHours') + self.sexToDec(timetableData.get('endTimeMinutes'));
-          var gap = self.sexToDec(timetableData.get('gap'));
-          for (var marker = startTime; marker < endTime; marker+=gap) {
-            timeMarkers.push(self.hourBuilder(marker)+' - '+self.hourBuilder(marker+gap));
-          }
-          self.set('timeMarkers',timeMarkers);
-          self.set('availableDays',self.getAvailableDays(timetableData.get('dayStart'),timetableData.get('dayQty')));
-          self.set('initialIndex',timetableData.get('dayStart'));
-          self.set('placeholder',self.get('availableDays').objectAt(0));
-        });
+        // console.log('availableDays',this.get('availableDays'));
+        // console.log('initialIndex',this.get('initialIndex'));
+        // console.log('placeholder',this.get('placeholder'));
+        // console.log('gap',this.get('gap'));
+        // console.log('startTime',this.get('startTime'));
+        // console.log('endTime',this.get('endTime'));
+        // console.log('timeMarkers',this.get('timeMarkers'));
       }.on('didInsertElement')
 });

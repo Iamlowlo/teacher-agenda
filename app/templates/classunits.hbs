@@ -1,12 +1,14 @@
 <div class="template_header">
   <h1>Classes</h1>
 </div>
-{{#each model as |class|}}
-<p>{{class.day}}</p>
-<p>{{class.startTimeHours}}:{{class.startTimeMinutes}}</p>
-<p>{{class.endTimeHours}}:{{class.endTimeMinutes}}</p>
-<p>{{class.center.name}}_</p>
-<p>{{class.alumn.fullName}}</p>
-<br>
+{{class-list classunits_by_day=modelsad}}
+
+{{#each model as |day key|}}
+<p>{{day.center.name}}</p>
 {{/each}}
+<br>
+{{#each model.tue as |day key|}}
+<p>{{day}}</p>
+{{/each}}
+<br>
 {{outlet}}

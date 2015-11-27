@@ -7,7 +7,21 @@ export default Ember.Component.extend({
   test : 'function',
   store : Ember.inject.service(),
   navigation  : Ember.computed(function(){
-    return this.routeName;
+    var routes = [
+      {name:'Centers',
+      route:'centers'
+    },
+      {name:'Alumns',
+      route:'alumns'
+    },
+      {name:'Classes',
+      route:'classunits'
+    },
+      {name:'Timetable',
+      route:'timetable'
+    }
+    ];
+    return routes;
   }),
   didInsertElement : function(){
     if($(document).width()<600){
