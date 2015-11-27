@@ -2,9 +2,9 @@
   <h1>Classes</h1>
 </div>
 {{class-list classunits_by_day=modelsad}}
-
-{{#each model as |day key|}}
-<p>{{day.center.name}}</p>
+{{log model}}
+{{#each model as |classunit key|}}
+<p>{{classunit.day}}</p>
 {{/each}}
 <br>
 {{#each model.tue as |day key|}}
