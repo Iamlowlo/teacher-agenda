@@ -1,14 +1,32 @@
 <div class="template_header">
   <h1>Classes</h1>
 </div>
-{{class-list classunits_by_day=modelsad}}
-{{log model}}
-{{#each model as |classunit key|}}
-<p>{{classunit.day}}</p>
-{{/each}}
-<br>
-{{#each model.tue as |day key|}}
-<p>{{day}}</p>
-{{/each}}
-<br>
+{{#if model.mon}}
+	<h2>{{model.days.[0]}}</h2>
+	{{class-list classunits_by_day=model.mon}}
+{{/if}}
+{{#if model.tue}}
+	<h2>{{model.days.[1]}}</h2>
+	{{class-list classunits_by_day=model.tue}}
+{{/if}}
+{{#if model.wed}}
+	<h2>{{model.days.[2]}}</h2>
+	{{class-list classunits_by_day=model.wed}}
+{{/if}}
+{{#if model.thu}}
+	<h2>{{model.days.[3]}}</h2>
+	{{class-list classunits_by_day=model.thu}}
+{{/if}}
+{{#if model.fri}}
+	<h2>{{model.days.[4]}}</h2>
+	{{class-list classunits_by_day=model.fri}}
+{{/if}}
+{{#if model.sat}}
+	<h2>{{model.days.[5]}}</h2>
+	{{class-list classunits_by_day=model.sat}}
+{{/if}}
+{{#if model.sun}}
+	<h2>{{model.days.[6]}}</h2>
+	{{class-list classunits_by_day=model.sun}}
+{{/if}}
 {{outlet}}

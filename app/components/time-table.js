@@ -30,6 +30,7 @@ export default Ember.Component.extend(TimeRelativeMixin,{
         return timeMarkers;
       }),
       onDidInsertElement : function(){
+        console.log(this.get('availableDays'));
         // console.log('availableDays',this.get('availableDays'));
         // console.log('initialIndex',this.get('initialIndex'));
         // console.log('placeholder',this.get('placeholder'));

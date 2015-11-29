@@ -1,6 +1,4 @@
 {{yield}}
-{{#each classunits_by_day as |classunit day|}}
-{{day}}
 <li class="dropable_list_element"><span class="main_info">{{alumn.fullName}}<i class="icon-keyboard_arrow_down"></i></span>
   <ul class="dropable_info">
     {{#each alumn.classunit as |classunit|}}
@@ -11,4 +9,3 @@
     {{/each}}
   </ul>
 </li>
-{{/each}}
