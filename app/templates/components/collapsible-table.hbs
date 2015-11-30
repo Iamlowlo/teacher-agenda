@@ -10,7 +10,7 @@
   <li class="row">
     <div class="cell content_heading">{{row}}</div>
     {{#each cols as |column column_index|}}
-    {{#collapsible-table-content-cell column_index=column_index selected=selected row_index=row_index}}
+    {{#collapsible-table-content-cell column_index=column_index row_index=row_index selected=selected}}
       {{#link-to 'index'}}{{column_index}}.{{row_index}}{{/link-to}}
     {{/collapsible-table-content-cell}}
     {{/each}}

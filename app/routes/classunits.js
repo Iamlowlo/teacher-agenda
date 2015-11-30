@@ -13,12 +13,5 @@ export default Ember.Route.extend(TimeRelativeMixin,{
     		sat : this.store.query('classunit', { orderBy: 'day', equalTo: "5" } ),
     		sun : this.store.query('classunit', { orderBy: 'day', equalTo: "6" } )
 		});
-	},
-	days : 'asdassa',
-	actions: {
-		loading(transition,openingRoute){
-    		console.log(this.get('weekDays'));
-    		this.set('days',this.get('weekDays'));
-    	}
 	}
 });

@@ -4,8 +4,9 @@
   <ul class="dropable_info">
     {{#each alumn.classunit as |classunit|}}
     <li>
-      <span class="dayName">{{weekday classunit.day}}</span>
-      from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}} at {{classunit.center.name}}
+      <span class="remarkable">{{weekday classunit.day}}</span>
+      from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}} at
+      <span class="remarkable">{{classunit.center.name}}</span> <span class="extra_info">({{classunit.center.address}})</span>
     </li>
     {{/each}}
   </ul>

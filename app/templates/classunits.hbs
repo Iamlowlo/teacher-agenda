@@ -1,32 +1,27 @@
 <div class="template_header">
   <h1>Classes</h1>
 </div>
+<ul class="dropable_list">
 {{#if model.mon}}
-	<h2>{{model.days.[0]}}</h2>
-	{{class-list classunits_by_day=model.mon}}
+	{{class-list classunits=model.mon dayName=model.days.[0]}}
 {{/if}}
 {{#if model.tue}}
-	<h2>{{model.days.[1]}}</h2>
-	{{class-list classunits_by_day=model.tue}}
+	{{class-list classunits=model.tue dayName=model.days.[1]}}
 {{/if}}
 {{#if model.wed}}
-	<h2>{{model.days.[2]}}</h2>
-	{{class-list classunits_by_day=model.wed}}
+	{{class-list classunits=model.wed dayName=model.days.[2]}}
 {{/if}}
 {{#if model.thu}}
-	<h2>{{model.days.[3]}}</h2>
-	{{class-list classunits_by_day=model.thu}}
+	{{class-list classunits=model.thu dayName=model.days.[3]}}
 {{/if}}
 {{#if model.fri}}
-	<h2>{{model.days.[4]}}</h2>
-	{{class-list classunits_by_day=model.fri}}
+	{{class-list classunits=model.fri dayName=model.days.[4]}}
 {{/if}}
 {{#if model.sat}}
-	<h2>{{model.days.[5]}}</h2>
-	{{class-list classunits_by_day=model.sat}}
+	{{class-list classunits=model.sat dayName=model.days.[5]}}
 {{/if}}
 {{#if model.sun}}
-	<h2>{{model.days.[6]}}</h2>
-	{{class-list classunits_by_day=model.sun}}
+	{{class-list classunits=model.sun dayName=model.days.[6]}}
 {{/if}}
+</ul>
 {{outlet}}

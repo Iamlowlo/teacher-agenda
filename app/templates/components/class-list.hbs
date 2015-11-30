@@ -1,11 +1,10 @@
 {{yield}}
-<li class="dropable_list_element"><span class="main_info">{{alumn.fullName}}<i class="icon-keyboard_arrow_down"></i></span>
-  <ul class="dropable_info">
-    {{#each alumn.classunit as |classunit|}}
-    <li>
-      <span class="dayName">{{weekday classunit.day}}</span>
-      from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}} at {{classunit.center.name}}
-    </li>
-    {{/each}}
-  </ul>
-</li>
+<span class="main_info">{{dayName}}<i class="icon-keyboard_arrow_down"></i></span>
+<ul class="dropable_info">
+  {{#each classunits as |classunit|}}
+  <li>
+    On <span class="remarkable">{{classunit.center.name}}</span> <span class="extra_info">({{classunit.center.address}})</span>
+    from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}}
+  </li>
+  {{/each}}
+</ul>
