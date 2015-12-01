@@ -22,9 +22,9 @@ export default Ember.Mixin.create({
     }
     var availableDays = [];
     for (var i = start; availableDays.length < this.weekDays.length; i++) {
-      i = (i==this.weekDays.length)?0:i;
+      i = (i===this.weekDays.length)?0:i;
       availableDays.push(this.weekDays[i]);
-    };
+    }
     this.weekDays=availableDays;
     return availableDays;
   }

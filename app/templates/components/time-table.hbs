@@ -1,2 +1,5 @@
 {{collapsible-table rows=timeMarkers cols=availableDays placeholder=placeholder initialIndex=initialIndex}}
+{{#each classunits as |classunit|}}
+  {{time-table-classunit classunit=classunit}}
+{{/each}}
 {{yield}}

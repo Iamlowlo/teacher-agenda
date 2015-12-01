@@ -8,8 +8,8 @@ export default Ember.Component.extend({
     $(this.element).on('click','.dropable_list_element',function(e){
       e.preventDefault();
       var $this = $(this);
-      $this.children('.main_info').children('.icon-keyboard_arrow_down').toggleClass('spinned_cw')
-      $this.children('.dropable_info').toggleClass('active')
+      $this.children('.main_info').children('.icon-keyboard_arrow_down').toggleClass('spinned_cw');
+      $this.children('.dropable_info').toggleClass('active');
     })
   }.on('didInsertElement')
 });

@@ -1,0 +1,16 @@
+.timetable_classunit{
+  position: absolute;
+  background: rgba($color_3,0.85);
+  color: white;
+  font-size: 0.7em;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.class_text{
+  width: 94%;
+  position: absolute;
+  left: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}

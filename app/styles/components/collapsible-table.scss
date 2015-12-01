@@ -24,9 +24,13 @@
     text-align: center;
     padding: 0.5em;
   }
+  .content_cell{
+    position: relative;
+  }
   @media (max-width: em($bp_md+1)){
     .header{
       overflow: hidden;
+      z-index: 1;
       max-height: 0;
       position: absolute;
       left: 0;
@@ -78,6 +82,7 @@
   }
   @media (min-width: em($bp_md)){
     display: table;
+    width: 90%;
     .row{
       display: table-row;
     }
@@ -95,6 +100,7 @@
     .content{
       .cell{
         border-right: 1px solid $color_2;
+        width: 12%;
         &:first-child{
           border-left: 1px solid $color_2;
         } 
