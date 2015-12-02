@@ -43,6 +43,12 @@
         border-bottom: 1px solid $color_4;
         padding-bottom: 0.2em;
       }
+      &.special_info{
+        font-size: 0.9em;
+        color: $color_3;
+        border-bottom: none;
+        padding-bottom: 0.5em;
+      }
     }
     &.active{
       border-top: 1px solid $color_5;

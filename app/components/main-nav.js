@@ -8,6 +8,9 @@ export default Ember.Component.extend({
   store : Ember.inject.service(),
   navigation  : Ember.computed(function(){
     var routes = [
+      {name:'Index',
+      route:'index'
+    },
       {name:'Centers',
       route:'centers'
     },

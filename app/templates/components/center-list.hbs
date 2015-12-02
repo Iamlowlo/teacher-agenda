@@ -1,0 +1,14 @@
+{{yield}}
+{{#each centers as |center|}}
+<li class="dropable_list_element"><span class="main_info">{{center.name}}<i class="icon-keyboard_arrow_down"></i></span>
+  <ul class="dropable_info">
+    <li class="special_info">{{center.address}} {{center.phone}}</li>
+    {{#each center.classunit as |classunit|}}
+    <li>
+      <span class="remarkable">{{weekday classunit.day}}</span>
+      from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}}
+    </li>
+    {{/each}}
+  </ul>
+</li>
+{{/each}}
