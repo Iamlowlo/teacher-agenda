@@ -1,8 +1,8 @@
-{{log classunits}}
 {{#each classunits as |classunit key|}}
-{{#if-conditional ifelse='if' arg1=classunit.center.name arg2='Creativa'}}
+  <li>
+{{#if-conditional ifelse='else' arg1=classunit.center.name arg2=(get classunits (concat (math key '-' 1) '.center.name'))}}
   <h2>{{classunit.center.name}}</h2>
 {{/if-conditional}}
-  <li>{{classunit.startTimeHours}}:{{classunit.startTimeMinutes}} - {{classunit.endTimeHours}}:{{classunit.endTimeMinutes}}</li>
+  {{classunit.startTimeHours}}:{{classunit.startTimeMinutes}} - {{classunit.endTimeHours}}:{{classunit.endTimeMinutes}}</li>
 {{/each}}
 {{yield}}

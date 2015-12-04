@@ -3,7 +3,8 @@
 <ul class="dropable_info">
   {{#each classunits as |classunit|}}
   <li>
-    On <span class="remarkable">{{classunit.center.name}}</span> <span class="extra_info">({{classunit.center.address}})</span>
+    With <span class="remarkable">{{classunit.alumn.fullName}}</span>
+    on <span class="remarkable">{{classunit.center.name}}</span> <span class="extra_info">({{classunit.center.address}})</span>
     from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}}
   </li>
   {{/each}}
