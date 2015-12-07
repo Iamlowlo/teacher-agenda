@@ -22,7 +22,6 @@ export default Ember.Component.extend(TimeRelativeMixin,{
     cell_end_classname = cell_end_classname + classEnd;
 
     let cellStart = document.getElementsByClassName(cell_start_classname)[0];
-    let cellEnd = document.getElementsByClassName(cell_end_classname)[0];
     let styleHeight = gapSize*cellHeight;
     let styleString = new Ember.Handlebars.SafeString('height:'+styleHeight+'px;');
     this.get('element').setAttribute('style',styleString);

@@ -13,6 +13,22 @@
   font-weight:600;
 }
 .extra_info{
+  line-height: 1.25em;
   font-size: 0.8em;
   opacity: 0.8;
+}
+.constrained_width{
+  max-width: ($bp_md - 30px);
+}
+.text_right{
+  float: right;
+  margin-right: 0.1em;
+}
+.block_right{
+  position: absolute;
+  right: 0;
+}
+.block_top{
+  position: absolute;
+  top: 0;
 }

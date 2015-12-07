@@ -1,0 +1,44 @@
+.plain_list{
+  padding:0 2em;
+  .plain_list_element{
+    cursor: pointer;
+    color: $color_1;
+    margin-bottom: 0.5em;
+    &:not(:last-child){
+      border-bottom: none;
+    }
+    .title{
+      border-bottom: 1px solid $color_3;
+      color: $color_4;
+      padding-bottom: 0.1em;
+      margin-bottom: 0.4em;
+    }
+    .main_info{
+      position: relative;
+      display: block;
+      padding: 0.5em 1.5em 0.5em 1em;
+      font-weight: 300;
+      &:hover{
+        background: $color_2;
+        color: white;
+      }
+    }
+    .icon-keyboard_arrow_down{
+      position: absolute;
+      display: block;
+      height: 1em;
+      width: 1em;
+      right: 0.5em;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      transition: transform 0.4s ease-in;
+    }
+  }
+  @media (max-width: em($bp_md+1)){
+    
+  }
+  @media (min-width: em($bp_md)){
+    
+  }
+}
