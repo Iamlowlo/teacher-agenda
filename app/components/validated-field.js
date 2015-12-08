@@ -1,6 +1,18 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const ValidatedField = Ember.Component.extend({
   tagName : 'label',
-  classNames : ['validated_field']
+  classNames : ['validated_field'],
+  classNameBindings : ['isUnvalid:unvalid'],
+  isUnvalid : false,
+  errorMsgs : [],
+  validation : Ember.computed(function(){
+  	return this.get('params');
+  })
 });
+
+ValidatedField.reopenClass({
+  positionalParams: "params"
+});
+
+export default ValidatedField;

@@ -1,1 +1,8 @@
 {{yield}}
+{{#if isUnvalid}}
+<ul class="error_pool">
+	{{#each errorMsgs as |errorMsg|}}
+	<li class="error_msg">{{errorMsg}}</li>
+	{{/each}}
+</ul>
+{{/if}}

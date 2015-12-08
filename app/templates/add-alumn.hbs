@@ -2,7 +2,7 @@
   <h1>Add a new Alumn</h1>
 </div>
 {{#validated-form submit=(action 'addAlumn') saveBtn=true }}
-  {{#validated-field}}<span class="label_tag">First Name</span>{{input name="firstName" value=firstName placeholder="First Name" required='required'}}{{/validated-field}}
-  {{#validated-field}}<span class="label_tag">Last Name</span>{{input name="lastName" value=lastName placeholder="Last Name" required='required'}}{{/validated-field}}
+  {{#validated-field 'noEmpty' 'justText'}}<span class="label_tag">First Name</span>{{input name="firstName" value=firstName placeholder="First Name" required='required'}}{{/validated-field}}
+  {{#validated-field 'noEmpty'}}<span class="label_tag">Last Name</span>{{input name="lastName" value=lastName placeholder="Last Name" required='required'}}{{/validated-field}}
 {{/validated-form}}
 {{outlet}}
