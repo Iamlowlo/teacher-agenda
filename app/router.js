@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('alumns');
   this.route('classunits');
   this.route('timetable');
+  this.route('add-alumn');
 });
 
 export default Router;

@@ -7,6 +7,7 @@
 @import 'components/main-nav';
 @import 'components/collapsible-table';
 @import 'components/dropable-list';
+@import 'components/plain-list';
 @import 'components/time-table';
 @import 'components/time-table-classunit';
 
@@ -27,14 +28,29 @@ body{
 #teacher_agenda{
   .template_header{
     padding: 2em 2em 1.5em;
+    position: relative;
     h1{
       font-size: 1.5em;
       font-weight: 700;
       color:$color_3;
     }
   }
+  >h2{
+    font-size: 1.1em;
+    font-weight: 600;
+    color:$color_4;
+    padding:0 1.8em 1em;
+  }
   .collapsible_table{
     margin: 0 auto;
   }
   padding-bottom: 5em;
+}
+.btn{
+  display: inline-block;
+  padding: 0.5em 0.9em;
+  &.primary{
+    color: white;
+    background: $color_2;
+  }
 }

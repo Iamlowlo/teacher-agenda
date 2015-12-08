@@ -1,8 +1,9 @@
 {{#each classunits as |classunit key|}}
-  <li>
-{{#if-conditional ifelse='else' arg1=classunit.center.name arg2=(get classunits (concat (math key '-' 1) '.center.name'))}}
-  <h2>{{classunit.center.name}}</h2>
-{{/if-conditional}}
-  {{classunit.startTimeHours}}:{{classunit.startTimeMinutes}} - {{classunit.endTimeHours}}:{{classunit.endTimeMinutes}}</li>
+  <li class="plain_list_element">
+  {{#if-conditional ifelse='else' arg1=classunit.center.name arg2=(get classunits (concat (math key '-' 1) '.center.name'))}}
+    <h3 class="title">{{classunit.center.name}} <span class="extra_info text_right">{{classunit.center.address}}</span></h3>
+  {{/if-conditional}}
+    <div class="main_info">{{hour classunit.startTimeHours classunit.startTimeMinutes}} - {{hour classunit.endTimeHours classunit.endTimeMinutes}} with {{classunit.alumn.fullName}}</div>
+  </li>
 {{/each}}
 {{yield}}
