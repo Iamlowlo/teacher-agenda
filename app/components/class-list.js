@@ -7,7 +7,7 @@ export default Ember.Component.extend(TimeRelativeMixin,{
   classNames: ['dropable_list_element'],
   click(){
     var $this = $(this.element);
-    $this.children('.main_info').children('.icon-keyboard_arrow_down').toggleClass('spinned_cw')
-    $this.children('.dropable_info').toggleClass('active')
+    $this.children('.main_info').children('.icon-keyboard_arrow_down').toggleClass('spinned_cw');
+    $this.children('.dropable_info').toggleClass('active');
   }
 });

@@ -10,6 +10,6 @@ export default Ember.Component.extend({
       var $this = $(this);
       $this.children('.main_info').children('.icon-keyboard_arrow_down').toggleClass('spinned_cw');
       $this.children('.dropable_info').toggleClass('active');
-    })
+    });
   }.on('didInsertElement')
 });
