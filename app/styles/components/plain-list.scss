@@ -35,10 +35,10 @@
       transition: transform 0.4s ease-in;
     }
   }
-  @media (max-width: em($bp_md+1)){
+  @media (max-width: em(map-get($break-points,md)+1)){
     
   }
-  @media (min-width: em($bp_md)){
+  @media (min-width: em(map-get($break-points,md))){
     
   }
 }

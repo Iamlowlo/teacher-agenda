@@ -1,8 +1,11 @@
 {{yield}}
 {{#if isUnvalid}}
-<ul class="error_pool">
-	{{#each errorMsgs as |errorMsg|}}
-	<li class="error_msg">{{errorMsg}}</li>
-	{{/each}}
-</ul>
+<div class="unvalid_content">
+  <span class="icon-error_outline"></span>
+  <ul class="error_pool">
+    {{#each errorMsgs as |errorMsg|}}
+    <li class="error_msg">{{errorMsg}}</li>
+    {{/each}}
+  </ul>
+</div>
 {{/if}}

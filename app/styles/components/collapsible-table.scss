@@ -27,7 +27,7 @@
   .content_cell{
     position: relative;
   }
-  @media (max-width: em($bp_md+1)){
+  @media (max-width: em(map-get($break-points,md)+1)){
     .header{
       overflow: hidden;
       z-index: 1;
@@ -80,7 +80,7 @@
       }
     }
   }
-  @media (min-width: em($bp_md)){
+  @media (min-width: em(map-get($break-points,md))){
     display: table;
     width: 90%;
     .row{

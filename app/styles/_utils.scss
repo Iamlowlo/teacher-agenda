@@ -18,7 +18,7 @@
   opacity: 0.8;
 }
 .constrained_width{
-  max-width: ($bp_md - 30px);
+  max-width: (map-get($break-points,md) - 30px);
 }
 .text_right{
   float: right;
@@ -31,4 +31,19 @@
 .block_top{
   position: absolute;
   top: 0;
+}
+%clearfix,
+.clearfix{
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+%column_container{
+  margin-left: -1*$column_gap;
+  margin-right: -1*$column_gap;
 }

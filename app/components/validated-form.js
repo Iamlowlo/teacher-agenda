@@ -20,6 +20,16 @@ let validationObj = {
                   }
                 },
                 msg : 'This field only admits letters'
+              },
+  'justNumbers' : {
+                test : function(value){
+                  if (value.match(/^[0-9]+$/)){ 
+                    return true;
+                  }else{
+                    return false;
+                  }
+                },
+                msg : 'This field only admits numbers'
               }
 };
 
@@ -28,6 +38,7 @@ export default Ember.Component.extend({
   actions : {
     validateAndSubmit(){
       let unvalidForm = false;
+      // filter inner components to get only validated fileds
       let filteredFields = this.childViews.filter(function(childView){
         let viewName = childView.constructor.toString();
         viewName = viewName.substr(viewName.indexOf('@')+1);

@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const ValidatedField = Ember.Component.extend({
   tagName : 'label',
-  classNames : ['validated_field'],
+  classNames : ['field validated_field'],
   classNameBindings : ['isUnvalid:unvalid'],
   isUnvalid : false,
   errorMsgs : [],

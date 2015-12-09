@@ -11,6 +11,8 @@ Router.map(function() {
   this.route('classunits');
   this.route('timetable');
   this.route('add-alumn');
+  this.route('add-center');
+  this.route('add-classunit');
 });
 
 export default Router;

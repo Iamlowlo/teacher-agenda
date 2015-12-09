@@ -1,6 +1,6 @@
-{{yield}}
 {{#each alumns as |alumn|}}
-<li class="dropable_list_element"><span class="main_info">{{alumn.fullName}}<i class="icon-keyboard_arrow_down"></i></span>
+<li class="dropable_list_element"><span class="main_info">{{alumn.fullName}}{{#if alumn.classunit}}<i class="icon-keyboard_arrow_down"></i>{{/if}}</span>
+  {{#if alumn.classunit}}
   <ul class="dropable_info">
     {{#each alumn.classunit as |classunit|}}
     <li>
@@ -10,5 +10,7 @@
     </li>
     {{/each}}
   </ul>
+  {{/if}}
 </li>
 {{/each}}
+{{yield}}

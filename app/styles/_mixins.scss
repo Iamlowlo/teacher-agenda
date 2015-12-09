@@ -1,3 +1,24 @@
 @function em($pixels, $base_size:16){
   @return  #{$pixels / $base_size}em;
 }
+
+@mixin get_columns ($grid){
+  @each $bp,$bp_size in $break-points{
+    @media(min-width:#{$bp_size}px){
+      @for $col from 0 to $grid{
+        .col_#{$bp}_#{$col+1}_#{$grid}{
+          width : (100/$grid*($col+1))+%;
+          padding-left: $column_gap;
+          padding-right: $column_gap;
+        }
+      }
+    }
+  }
+}
+
+@mixin style-placeholder{
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder {@content; }
+  &:-ms-input-placeholder { @content; }  
+}

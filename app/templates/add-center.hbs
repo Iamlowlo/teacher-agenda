@@ -1,0 +1,9 @@
+<div class="template_header">
+  <h1>Add a new Center</h1>
+</div>
+{{#validated-form submit=(action 'addCenter') saveBtn=true class="form"}}
+  {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">Center Name</span>{{input name="centerName" value=centerName placeholder="Center Name" required='required'}}{{/validated-field}}
+  {{#validated-field 'noEmpty' 'justNumbers' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">Center Phone</span>{{input name="centerPhone" value=centerPhone placeholder="Center Phone" required='required'}}{{/validated-field}}
+  {{#validated-field 'noEmpty' class="col_xs_12_12"}}<span class="label_tag">Center Address</span>{{input name="centerAddress" value=centerAddress placeholder="Center Address" required='required'}}{{/validated-field}}
+{{/validated-form}}
+{{outlet}}
