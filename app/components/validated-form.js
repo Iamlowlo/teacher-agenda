@@ -28,9 +28,10 @@ export default Ember.Component.extend({
   actions : {
     validateAndSubmit(){
       let unvalidForm = false;
-      console.log(this.childViews)
       let filteredFields = this.childViews.filter(function(childView){
-        return childView.__proto__._debugContainerKey === 'component:validated-field';
+        let viewName = childView.constructor.toString();
+        viewName = viewName.substr(viewName.indexOf('@')+1);
+        return viewName === 'component:validated-field:';
       });
       //loop through validated-fields
       filteredFields.forEach(function(validatedField){
