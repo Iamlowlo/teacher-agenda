@@ -27,5 +27,8 @@ export default Ember.Mixin.create({
     }
     this.weekDays=availableDays;
     return availableDays;
+  },
+  getTimestamp : function(hour,minutes){
+    return new Date('1','1','1',hour,minutes).getTime();
   }
 });
