@@ -1,0 +1,8 @@
+{{#if options}}<span class="icon-keyboard_arrow_down"></span>{{/if}}
+<select name="alumn" onchange={{action 'setOption' value="target.value"}}>
+  {{#if placeholder}}<option value="">{{placeholder}}</option>{{/if}}
+  {{#each options as |option|}}
+  <option value="{{option.value}}">{{option.tag}}</option>
+  {{/each}}
+</select>
+{{yield}}

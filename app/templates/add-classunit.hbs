@@ -2,16 +2,12 @@
   <h1>Add a new Class</h1>
 </div>
 {{#validated-form submit=(action 'addClassunit') saveBtn=true class="form"}}
-  <select name="alumn" onchange="{{action }}">
-    <option value="">Select an alumn</option>
-    {{#each model.alumn as |alumn|}}
-    <option value="{{alumn.id}}">{{alumn.fullName}}</option>
-    {{/each}}
-  </select>
-  {{log alumns}}
-  {{#each alumns as |alumn|}}
-    <p>{{alumn.id}} - {{alumn.fullName}}</p>
-    {{/each}}
+  {{#validated-field 'noEmpty' class="col_xs_6_12 col_md_3_12"}}
+  {{ember-select options=alumns placeholder="Select an alumn"}}
+  {{/validated-field}}
+  {{#validated-field 'noEmpty' class="col_xs_6_12 col_md_3_12"}}
+  {{ember-select options=centers placeholder="Select an center"}}
+  {{/validated-field}}
   {{#validated-field 'noEmpty' 'justNumbers' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">Weekday</span>{{input name="weekday" value=weekday placeholder="Weekday" required='required'}}{{/validated-field}}
   {{#validated-field 'noEmpty' 'justNumbers' class="col_xs_6_12 col_md_3_12"}}<span class="label_tag">Start hour</span>{{input name="startHour" value=startHour placeholder="Start hour" required='required'}}{{/validated-field}}
   {{#validated-field 'noEmpty' 'justNumbers' class="col_xs_6_12 col_md_3_12"}}<span class="label_tag">Start minute</span>{{input name="startMinutes" value=startMinutes placeholder="Start minutes" required='required'}}{{/validated-field}}

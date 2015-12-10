@@ -1,3 +1,5 @@
+@import 'components/ember-select';
+
 .form{
   padding: 0 2em;
   @extend %column_container;
@@ -36,8 +38,12 @@
   .unvalid{
     position: relative;
     input,
-    textarea{
+    textarea,
+    select{
       border-color: $red_alert;
+    }
+    .icon-keyboard_arrow_down{
+      color: $red_alert;
     }
     .unvalid_content{
       position: absolute;
@@ -59,6 +65,11 @@
     .icon-error_outline{
       font-size: 1.2em;
       cursor: pointer;
+      background: white;
+      border-radius: 100%;
+      margin-right: -1em;
+      margin-top: 0.3em;
+      display: inline-block;
     }
     .error_pool{
       display: none;
