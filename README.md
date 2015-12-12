@@ -18,7 +18,7 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
-## Installation
+## Installation 
 
 1. `git clone https://github.com/Iamlowlo/teacher-agenda.git` this repository
 2. `cd teacher-agenda`
