@@ -2,6 +2,7 @@
 
 This is a web app to manage a teacher's agenda.
 The key points to achieve with the app are:
+
 1. Have track of your alumn's progress viewing what did they do on the last class and save what you teach them when the class is finished.
 2. Manage your work load. On index you can see how is your job load today, and you can see how does your week look like on the timetable.
 
