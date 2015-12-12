@@ -9,7 +9,7 @@ The key points to achieve with the app are:
 The web app is based on **EmberJS 2.2** an runs with **Firebase**. Built with **ember-cli**, uses **ember-cli-sass** as styles preprocessor. To follow Ember's folder standards, when creating a new component with `ember generate component <component-name>` please create a scss file inside /scss/components/ with the component name as ember-cli does with js and hbs files.
 
 ## Prerequisites
-
+ 
 You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
