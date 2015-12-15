@@ -14,6 +14,12 @@ export default Ember.Mixin.create({
     minutes = (minutes.toString().length<2)?'0'+minutes:minutes;
     return hours+':'+minutes;
   },
+  hourBuilder2 : function(timestamp){
+    let time = new Date(timestamp);
+    let minutes = time.getMinutes().toString();
+    minutes = (minutes.length<2) ? '0'+minutes : minutes;
+    return time.getHours()+':'+minutes;
+  },
   weekDays : ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
   getAvailableDays : function(start,qty){
     // given a week day start and qty of days returns the proper day name array
