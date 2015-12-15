@@ -4,6 +4,8 @@ let $ = Ember.$;
 export default Ember.Component.extend({
   tagName: 'ul',
   classNames: ['dropable_list'],
+  classunitSorting: ['center.classunit'],
+  sortedClassunits: Ember.computed.sort('centers.classunit', 'classunitSorting'),
   onDidInsertElement : function(){
     $(this.element).on('click','.dropable_list_element',function(e){
       e.preventDefault();

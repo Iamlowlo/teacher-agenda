@@ -2,7 +2,7 @@
 <li class="dropable_list_element"><span class="main_info">{{alumn.fullName}}{{#if alumn.classunit}}<i class="icon-keyboard_arrow_down"></i>{{/if}}</span>
   {{#if alumn.classunit}}
   <ul class="dropable_info">
-    {{#each alumn.classunit as |classunit|}}
+    {{#each alumn.sortedClassunits as |classunit|}}
     <li>
       <span class="remarkable">{{weekday classunit.day}}</span>
       from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}} at

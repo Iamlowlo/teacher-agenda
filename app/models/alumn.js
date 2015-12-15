@@ -7,5 +7,8 @@ export default DS.Model.extend({
   fullName : Ember.computed('firstName','lastName',function(){
     return this.get('firstName')+' '+this.get('lastName');
   }),
-  classunit : DS.hasMany('classunit', {async: true})
+  classunit : DS.hasMany('classunit', {async: true}),
+  sortedClassunits : function(){
+    return this.get('classunit').sortBy('day','startTimeHours','startTimeMinutes');
+  }.property('classunit.@each.day')
 });

@@ -42,7 +42,6 @@ export default Ember.Controller.extend(TimeRelativeMixin,{
           if (  startTime>=resultStartTime && startTime<resultEndTime ||
                 (endTime>resultStartTime && endTime<=resultEndTime) ||
                 (startTime<=resultStartTime && endTime>=resultEndTime) ) {
-            console.log('Found overlapping');
             overlappingCheck = true;
           }
         });
@@ -62,7 +61,7 @@ export default Ember.Controller.extend(TimeRelativeMixin,{
           classunit.save();
           alumn.get('classunit').pushObject(classunit);
           alumn.save();
-          center.get('classunit').pushObject(classunit)
+          center.get('classunit').pushObject(classunit);
           center.save();
         }else{
           console.log('adition stopped');
