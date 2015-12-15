@@ -5,7 +5,7 @@
     {{#each alumn.sortedClassunits as |classunit|}}
     <li>
       <span class="remarkable">{{weekday classunit.day}}</span>
-      from {{hour classunit.startTimeHours classunit.startTimeMinutes}} to {{hour classunit.endTimeHours classunit.endTimeMinutes}} at
+      from {{hour classunit.beginningTime}} to {{hour classunit.conclusionTime}} at
       <span class="remarkable">{{classunit.center.name}}</span> <span class="extra_info">({{classunit.center.address}})</span>
     </li>
     {{/each}}

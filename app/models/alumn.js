@@ -9,6 +9,6 @@ export default DS.Model.extend({
   }),
   classunit : DS.hasMany('classunit', {async: true}),
   sortedClassunits : function(){
-    return this.get('classunit').sortBy('day','startTimeHours','startTimeMinutes');
+    return this.get('classunit').sortBy('day','beginningTime');
   }.property('classunit.@each.day')
 });
