@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('add-alumn');
   this.route('add-center');
   this.route('add-classunit');
+  this.route('class-info', {path: '/class-info/:id'});
 });
 
 export default Router;
