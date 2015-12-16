@@ -47,3 +47,27 @@
   margin-left: -1*$column_gap;
   margin-right: -1*$column_gap;
 }
+
+.regular_dl{
+  dt{
+    font-size: 0.95em;
+    font-weight: 400;
+    margin-bottom: 0.1em;
+    color: $color_4;
+  }
+  dd{
+    font-weight: 300;
+    margin-bottom: 0.8em;
+  }
+  @media (min-width: em(map-get($break-points,md)+1)){
+    @extend .constrained_width;
+    display: flex;
+    flex-wrap:wrap;
+    dt{
+      flex-basis:15%;
+    }
+    dd{
+      flex-basis:85%;
+    }
+  }
+}

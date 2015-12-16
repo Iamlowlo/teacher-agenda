@@ -2,7 +2,7 @@
 <select name="alumn" onchange={{action 'setOption' value="target.value"}}>
   {{#if placeholder}}<option value="">{{placeholder}}</option>{{/if}}
   {{#each options as |option|}}
-  <option value="{{option.value}}">{{option.tag}}</option>
+  <option value="{{option.value}}" selected={{eq option.value value}}>{{option.tag}}</option>
   {{/each}}
 </select>
 {{yield}}

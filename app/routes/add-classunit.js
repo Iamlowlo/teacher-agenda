@@ -6,6 +6,7 @@ export default Ember.Route.extend({
       classunit : this.store.findAll('classunit'),
       alumn : this.store.findAll('alumn'),
       center : this.store.findAll('center'),
+      classtype : this.store.findAll('classtype')
     });
   }
 });

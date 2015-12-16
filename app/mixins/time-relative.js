@@ -7,14 +7,7 @@ export default Ember.Mixin.create({
   decToSex : function(dec){
     return dec*60;
   },
-  hourBuilder : function(decTime){
-    var minutes = decTime%1;
-    var hours = decTime-minutes;
-    minutes = this.decToSex(minutes);
-    minutes = (minutes.toString().length<2)?'0'+minutes:minutes;
-    return hours+':'+minutes;
-  },
-  hourBuilder2 : function(timestamp){
+  hourBuilder : function(timestamp){
     let time = new Date(timestamp);
     let minutes = time.getMinutes().toString();
     minutes = (minutes.length<2) ? '0'+minutes : minutes;
@@ -35,6 +28,6 @@ export default Ember.Mixin.create({
     return availableDays;
   },
   getTimestamp : function(hour,minutes){
-    return new Date('1','1','1',hour,minutes).getTime();
+    return new Date('0','0','0',hour,minutes).getTime();
   }
 });

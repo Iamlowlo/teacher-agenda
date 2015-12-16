@@ -3,6 +3,7 @@ import TimeRelativeMixin from '../mixins/time-relative';
 
 export default Ember.Controller.extend(TimeRelativeMixin,{
   center:'',
+  classtype:'',
   alumn:'',
   weekday:'',
   startHour:'',
@@ -29,14 +30,21 @@ export default Ember.Controller.extend(TimeRelativeMixin,{
     });
     return centers;
   }.property('model.center.@each.id','model.center.@each.name'),
+  classtypes: function(){
+    let classtypes = [];
+    this.get('model.classtype').forEach(function(classtype){
+      classtypes.push({ value:classtype.get('id'), tag:classtype.get('name')});
+    });
+    return classtypes;
+  }.property('model.center.@each.id','model.center.@each.name'),
   actions: {
     addClassunit (){
       let self = this;
       let overlappingCheck = false;
       this.store.query('classunit', { orderBy:'day', equalTo: this.get('weekday')}).then(function(results){
         results.forEach(function(result){
-          let resultStartTime = self.getTimestamp(result.get('startTimeHours'),result.get('startTimeMinutes'));
-          let resultEndTime = self.getTimestamp(result.get('endTimeHours'),result.get('endTimeMinutes'));
+          let resultStartTime = result.get('beginningTime');
+          let resultEndTime = result.get('conclusionTime');
           let startTime = self.get('startTime');
           let endTime = self.get('endTime');
           if (  startTime>=resultStartTime && startTime<resultEndTime ||
@@ -48,21 +56,33 @@ export default Ember.Controller.extend(TimeRelativeMixin,{
         if (!overlappingCheck) {
           let alumn = self.store.peekRecord('alumn',self.get('alumn'));
           let center = self.store.peekRecord('center',self.get('center'));
+          let classtype = self.store.peekRecord('classtype',self.get('classtype'));
           let classunit = self.store.createRecord('classunit',{
             id : self.get('model.classunit.length'),
             alumn : alumn,
             center : center,
+            classtype : classtype,
             day : self.get('weekday'),
-            startTimeHours : self.get('startHour'),
-            startTimeMinutes : self.get('startMinutes'),
-            endTimeHours : self.get('endHour'),
-            endTimeMinutes : self.get('endMinutes')
+            beginningTime : self.get('startTime'),
+            conclusionTime : self.get('endTime')
           });
-          classunit.save();
+          classunit.save().then(function(classunit){
+            self.transitionToRoute('add-classunit');
+            self.set('weekday','');
+            self.set('startHour','');
+            self.set('startMinutes','');
+            self.set('endHour','');
+            self.set('endMinutes','');
+            self.set('alumn','');
+            self.set('center','');
+            self.set('classtype','');
+          });
           alumn.get('classunit').pushObject(classunit);
           alumn.save();
           center.get('classunit').pushObject(classunit);
           center.save();
+          classtype.get('classunit').pushObject(classunit);
+          classtype.save();
         }else{
           console.log('adition stopped');
         }

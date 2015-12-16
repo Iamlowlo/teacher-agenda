@@ -17,7 +17,7 @@ export default Ember.Component.extend(TimeRelativeMixin,{
     var timeMarkers=[];
     var gap = this.get('config.gap');
     for (var marker = this.get('startTime'); marker < this.get('endTime'); marker+=gap) {
-      timeMarkers.push(this.hourBuilder2(marker)+' - '+this.hourBuilder2(marker+gap));
+      timeMarkers.push(this.hourBuilder(marker)+' - '+this.hourBuilder(marker+gap));
     }
     return timeMarkers;
   })

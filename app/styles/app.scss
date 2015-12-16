@@ -1,8 +1,8 @@
 @import 'reset';
 @import 'fonts';
 @import 'variables';
-@import 'utils';
 @import 'mixins';
+@import 'utils';
 @import 'forms';
 
 @import 'components/main-nav';
@@ -50,6 +50,9 @@ body{
     margin: 0 auto;
   }
   padding-bottom: 5em;
+}
+.main_container{
+  padding: 0 2em;
 }
 .btn{
   display: inline-block;

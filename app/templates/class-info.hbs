@@ -1,5 +1,22 @@
 <div class="template_header">
 <h1>Class info</h1>
 </div>
-{{ log model }}
+<div class="main_container">
+  <dl class="regular_dl">
+    <dt>Center: </dt>
+    <dd>{{ model.center.name }}</dd>
+    <dt>Alumn: </dt>
+    <dd>{{model.alumn.fullName}}</dd>
+    <dt>Day: </dt>
+    <dd>{{weekday model.day}}</dd>
+    <dt>Hour: </dt>
+    <dd>{{hour model.beginningTime}} to {{hour model.conclusionTime}}</dd>
+  </dl>
+  {{log model.classtype.name}}
+  {{log model.classtype.topics}}
+  {{log 'Hello'}}
+  {{#each model.classtype.topics as |item index|}}
+  {{log index item}}
+  {{/each}}
+</div>
 {{outlet}}
