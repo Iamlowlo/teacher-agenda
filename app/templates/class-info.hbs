@@ -12,11 +12,8 @@
     <dt>Hour: </dt>
     <dd>{{hour model.beginningTime}} to {{hour model.conclusionTime}}</dd>
   </dl>
-  {{log model.classtype.name}}
-  {{log model.classtype.topics}}
-  {{log 'Hello'}}
   {{#each model.classtype.topics as |item index|}}
-  {{log index item}}
+  {{item}}
   {{/each}}
 </div>
 {{outlet}}
