@@ -12,8 +12,21 @@
     <dt>Hour: </dt>
     <dd>{{hour model.beginningTime}} to {{hour model.conclusionTime}}</dd>
   </dl>
-  {{#each model.classtype.topics as |item index|}}
-  {{item}}
+  <ul class="class_list">
+  {{#each model.classinfo as |classinfo classinfo_index|}}
+    <li>
+      <span class="date">{{date classinfo.date}}</span>
+      <ul class="field_list">
+      {{log classinfo.classinfofield}}
+        {{#each classinfo.classinfofield as |classinfoField classinfoField_index|}}
+        <li>
+          <p class="title">{{classinfoField.name}}</p>
+          {{input type="checkbox" name="classinfo_field_" checked=classinfoField.checked}}
+        </li>
+        {{/each}}
+      </ul>
+    </li>
   {{/each}}
+  </ul>
 </div>
 {{outlet}}

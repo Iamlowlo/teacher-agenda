@@ -4,7 +4,7 @@ import TimeRelativeMixin from '../mixins/time-relative';
 export default Ember.Component.extend(TimeRelativeMixin,{
   classNames : ['timetable_classunit'],
   onDidInsertElement : function(){
-    let startTime = this.get('parentView.startTime')
+    let startTime = this.get('parentView.startTime');
     let gap = this.get('parentView.config.gap');
     //set column classname
     let cell_classname = 'cell_'+this.get('classunit.day')+'_';

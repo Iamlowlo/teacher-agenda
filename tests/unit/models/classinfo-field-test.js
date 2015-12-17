@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('config-classtype', 'Unit | Model | config classtype', {
+moduleForModel('classinfo-data', 'Unit | Model | classinfo data', {
   // Specify the other units that are required for this test.
   needs: []
 });
