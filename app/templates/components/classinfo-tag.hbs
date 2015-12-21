@@ -1,0 +1,21 @@
+{{#if isToggable}}
+<p class="date" {{action "toggleTag"}}>
+	{{date classinfo.date}}
+	<span {{bind-attr class="isOpen:spinned"}} class="icon-keyboard_arrow_down"></span>
+	{{yield}}
+</p>
+{{else}}
+<p class="date">{{date classinfo.date}}</p>
+{{yield}}
+{{/if}}
+{{#if isOpen}}
+<ul class="field_list">
+	{{#each classinfo.classinfofield as |classinfoField|}}
+	<li>
+	  <p class="title">{{classinfoField.name}}</p>
+	  {{input type="checkbox" name="classinfo_field_" checked=classinfoField.checked disabled=true}}
+	  {{classinfoField.content}}
+	</li>
+	{{/each}}
+</ul>
+{{/if}}
