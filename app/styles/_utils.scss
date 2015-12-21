@@ -2,6 +2,10 @@
   display : none !important;
   visibility: hidden !important;
 }
+.icon-keyboard_arrow_down{
+  will-change:transform;
+  display: inline-block;
+}
 .spinned_cw{
   transform:rotate(-180deg);
 }
