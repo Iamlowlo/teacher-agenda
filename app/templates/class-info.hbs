@@ -1,5 +1,6 @@
 <div class="template_header">
-<h1>Class info</h1>
+  <h1>Class info</h1>
+  <span class="btn primary" {{action "openCreationMode"}}>Add info to this class</span>
 </div>
 <div class="main_container">
   <dl class="regular_dl">
@@ -17,5 +18,10 @@
     {{classinfo-tag classinfo=classinfo isToggable=true isOpen=false}}
   {{/each}}
   </ul>
+  {{#if isCreationMode}}
+  {{#validated-form submit=(action 'addClassInfo') saveBtn=true class="form"}}
+
+  {{/validated-form}}
+  {{/if}}
 </div>
 {{outlet}}
