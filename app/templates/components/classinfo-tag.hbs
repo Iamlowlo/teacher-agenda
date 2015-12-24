@@ -5,7 +5,7 @@
 	{{yield}}
 </p>
 {{else}}
-<p class="date">{{date classinfo.date}}</p>
+<p class="date" {{action "passTag"}}>{{date classinfo.date}}</p>
 {{yield}}
 {{/if}}
 {{#if isOpen}}

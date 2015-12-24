@@ -3,24 +3,36 @@
   <span class="btn primary" {{action "openCreationMode"}}>Add info to this class</span>
 </div>
 <div class="main_container">
-  <dl class="regular_dl">
-    <dt>Center: </dt>
-    <dd>{{ model.center.name }}</dd>
-    <dt>Alumn: </dt>
-    <dd>{{model.alumn.fullName}}</dd>
-    <dt>Day: </dt>
-    <dd>{{weekday model.day}}</dd>
-    <dt>Hour: </dt>
-    <dd>{{hour model.beginningTime}} to {{hour model.conclusionTime}}</dd>
-  </dl>
-  <ul class="class_list">
-  {{#each model.classinfo as |classinfo|}}
-    {{classinfo-tag classinfo=classinfo isToggable=true isOpen=false}}
-  {{/each}}
-  </ul>
+  <div class="classunit_info">
+    <dl class="regular_dl">
+      <dt>Type: </dt>
+      <dd>{{ model.classtype.name }}</dd>
+      <dt>Center: </dt>
+      <dd>{{ model.center.name }}</dd>
+      <dt>Alumn: </dt>
+      <dd>{{model.alumn.fullName}}</dd>
+      <dt>Day: </dt>
+      <dd>{{weekday model.day}}</dd>
+      <dt>Hour: </dt>
+      <dd>{{hour model.beginningTime}} to {{hour model.conclusionTime}}</dd>
+    </dl>
+    <ul class="class_list">
+    {{#each model.classinfo as |classinfo|}}
+      {{classinfo-tag classinfo=classinfo isToggable=false isOpen=false classTag=classTag}}
+    {{/each}}
+    </ul>
+  </div><!-- 
+ --><div class="classtag_info">
+    {{#each classTag as |test index|}}
+    <p>{{test.name}} - {{test.content}}</p>
+    {{/each}}
+  </div>
+
   {{#if isCreationMode}}
   {{#validated-form submit=(action 'addClassInfo') saveBtn=true class="form"}}
-
+    {{#each model.classtype.topics as |topic|}}
+    {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">{{topic}}</span>{{input name="centerName" value=(topic  ) placeholder="Center Name" required='required'}}{{/validated-field}}
+    {{/each}}
   {{/validated-form}}
   {{/if}}
 </div>

@@ -6,8 +6,14 @@ export default Ember.Component.extend({
 	isToggable: '',
 	isOpen: true,
 	actions: {
-		toggleTag(){
-			this.toggleProperty('isOpen');
+    toggleTag(){
+      this.toggleProperty('isOpen');
+    },
+		passTag(){
+      let self = this;
+      this.get('classinfo.classinfofield').then(function(response){
+			  self.set('classTag',response);
+      });
 		}
 	}
 });
