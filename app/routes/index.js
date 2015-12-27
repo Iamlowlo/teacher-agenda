@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     day=(day<0)?"6":day.toString();
 
     let orderedClassunits = this.store.query('classunit', { orderBy: 'day', equalTo: day }).then(function(classunits){
-      return classunits.sortBy('startTimeHours');
+      return classunits.sortBy('beginningTime');
     });
 
     return Ember.RSVP.hash({
