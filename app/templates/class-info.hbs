@@ -30,8 +30,8 @@
 
   {{#if isCreationMode}}
   {{#validated-form submit=(action 'addClassInfo') saveBtn=true class="form"}}
-    {{#each model.classtype.topics as |topic|}}
-    {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">{{topic}}</span>{{input name="centerName" value=(topic  ) placeholder="Center Name" required='required'}}{{/validated-field}}
+    {{#each inputFieldList as |inputField|}}
+    {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">{{topic}}</span>{{input name="inputField.name" value=inputField.content placeholder=inputField.name required='required'}}{{/validated-field}}
     {{/each}}
   {{/validated-form}}
   {{/if}}
