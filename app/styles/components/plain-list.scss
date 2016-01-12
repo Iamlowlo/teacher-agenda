@@ -2,7 +2,7 @@
   padding:0 2em;
   .plain_list_element{
     cursor: pointer;
-    color: $color_1;
+    color: $polite_black;
     margin-bottom: 0.5em;
     &:not(:last-child){
       border-bottom: none;
@@ -24,7 +24,7 @@
       }
       a{
         text-decoration: none;
-        color: $color_1;
+        color: $polite_black;
       }
     }
     .icon-keyboard_arrow_down{

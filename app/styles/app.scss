@@ -18,9 +18,9 @@ body{
   font-family: $font_family_main;
 }
 #main_header{
-  background: $color_4;
+  background: $color_3;
   padding: 1.5em 1.5em 0.5em;
-  border-top: 10px solid $color_3;
+  border-top: 10px solid $color_2;
   h1{
     color: white;
     text-shadow: 1px 1px 0 $color_3;
@@ -35,7 +35,7 @@ body{
     h1{
       font-size: 1.5em;
       font-weight: 700;
-      color:$color_3;
+      color:$color_2;
       margin-bottom: 0.5em;
     }
     .btn{
@@ -55,14 +55,6 @@ body{
 }
 .main_container{
   padding: 0 2em;
-}
-.btn{
-  display: inline-block;
-  padding: 0.5em 0.9em;
-  &.primary{
-    color: white;
-    background: $color_2;
-  }
 }
 
 @include get_columns(12);

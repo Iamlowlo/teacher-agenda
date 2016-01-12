@@ -18,20 +18,37 @@
     </dl>
     <ul class="class_list">
     {{#each model.classinfo as |classinfo|}}
-      {{classinfo-tag classinfo=classinfo isToggable=false isOpen=false classTag=classTag}}
+      {{classinfo-tag classinfo=classinfo isToggable=false isOpen=false classTag=classTag classTagActive=classTagActive}}
     {{/each}}
     </ul>
-  </div><!-- 
- --><div class="classtag_info">
-    {{#each classTag as |test index|}}
-    <p>{{test.name}} - {{test.content}}</p>
-    {{/each}}
+  </div><!--
+--><div class="classtag_info">
+    <dl class="regular_dl">
+      {{#each classTag as |classTagInfo|}}
+      {{#if classTagInfo.content}}
+        <dt class="{{inline-if classTagInfo.checked '' 'disabled'}}">
+        {{#if isEditionMode}}
+        {{input type='checkbox' name=classTagInfo.checked checked=classTagInfo.checked}}
+        {{/if}}
+        {{classTagInfo.name}}
+        </dt>
+        <dd class="{{inline-if classTagInfo.checked '' 'disabled'}}">{{classTagInfo.content}}</dd>
+      {{/if}}
+      {{/each}}
+    </dl>
+    {{#if classTag}}
+    <div class="btn_group right">
+      <span class="icon-edit btn primary icon_rounded" {{action "openEditionMode" }}></span>
+    </div>
+    {{/if}}
   </div>
 
   {{#if isCreationMode}}
-  {{#validated-form submit=(action 'addClassInfo') saveBtn=true class="form"}}
+  {{#validated-form submit=(action 'addClassInfo') saveBtn=true class="form add_classinfo_form"}}
     {{#each inputFieldList as |inputField|}}
+    {{#unless (eq inputField.name 'Comments')}}
     {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">{{topic}}</span>{{input name="inputField.name" value=inputField.content placeholder=inputField.name required='required'}}{{/validated-field}}
+    {{/unless}}
     {{/each}}
   {{/validated-form}}
   {{/if}}

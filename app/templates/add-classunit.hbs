@@ -1,6 +1,7 @@
 <div class="template_header">
   <h1>Add a new Class</h1>
 </div>
+<div class="main_container">
 {{#validated-form submit=(action 'addClassunit') saveBtn=true class="form"}}
   {{#validated-field 'noEmpty' class="col_xs_6_12 col_md_3_12"}}{{ember-select options=classtypes value=classtype placeholder="Select an class type"}}{{/validated-field}}
   {{#validated-field 'noEmpty' class="col_xs_6_12 col_md_3_12"}}{{ember-select options=alumns value=alumn placeholder="Select an alumn"}}{{/validated-field}}
@@ -12,3 +13,4 @@
   {{#validated-field 'noEmpty' 'justNumbers' class="col_xs_6_12 col_md_3_12"}}<span class="label_tag">End minute</span>{{input name="endMinutes" value=endMinutes placeholder="End minutes" required='required'}}{{/validated-field}}
 {{/validated-form}}
 {{outlet}}
+</div>

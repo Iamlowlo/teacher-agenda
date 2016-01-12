@@ -2,4 +2,15 @@
 .classtag_info{
   @extend .col_md_6_12;
   display: inline-block;
+  position: relative;
+}
+.classunit_info{
+  margin-left: -1em;
+  vertical-align: top;
+}
+.classinfoTag{
+  margin-bottom: 0.4em;
+}
+.add_classinfo_form{
+  margin-top: 2em;
 }

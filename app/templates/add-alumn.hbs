@@ -1,8 +1,10 @@
 <div class="template_header">
   <h1>Add a new Alumn</h1>
 </div>
+<div class="main_container">
 {{#validated-form submit=(action 'addAlumn') saveBtn=true class="form"}}
   {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">First Name</span>{{input name="firstName" value=firstName placeholder="First Name" required='required'}}{{/validated-field}}
   {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">Last Name</span>{{input name="lastName" value=lastName placeholder="Last Name" required='required'}}{{/validated-field}}
 {{/validated-form}}
 {{outlet}}
+</div>

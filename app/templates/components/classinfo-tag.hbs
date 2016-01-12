@@ -4,8 +4,8 @@
 	<span class="icon-keyboard_arrow_down {{if isOpen "spinned_cw"}}"></span>
 	{{yield}}
 </p>
-{{else}}
-<p class="date" {{action "passTag"}}>{{date classinfo.date}}</p>
+{{else if classinfo.date}}
+<span class="btn primary{{inline-if isActive ' active'}}" {{action "passTag"}}>{{date classinfo.date}}</span>
 {{yield}}
 {{/if}}
 {{#if isOpen}}

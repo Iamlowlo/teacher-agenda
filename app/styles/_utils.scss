@@ -16,6 +16,12 @@
   font-size: 1.1em;
   font-weight:600;
 }
+.disabled{
+  opacity: 0.5;
+}
+.anchor_position{
+  position: relative;
+}
 .extra_info{
   line-height: 1.25em;
   font-size: 0.8em;
@@ -52,12 +58,47 @@
   margin-right: -1*$column_gap;
 }
 
+.btn{
+  display: inline-block;
+  padding: 0.5em 0.9em;
+  cursor: pointer;
+  &.icon_rounded{
+    font-size: 1.3em;
+    height: 1.8em;
+    width: 1.9em;
+    padding: 0;
+    border-radius: 100%;
+    line-height: 1.8em;
+    text-align: center;
+  }
+  &.primary{
+    background: $color_2;
+    color: $polite_white;
+    &:hover{
+      background: $color_3;
+    }
+    &.active{
+      background: $color_accent_2;
+      color: $polite_black;
+    }
+  }
+}
+
+.btn_group{
+  position: absolute;
+  &.super{
+    top: 0;
+  }
+  &.right{
+    right: 0;
+  }
+}
 .regular_dl{
   dt{
     font-size: 0.95em;
     font-weight: 400;
     margin-bottom: 0.1em;
-    color: $color_4;
+    color: $color_3;
   }
   dd{
     font-weight: 300;
@@ -72,6 +113,7 @@
     }
     dd{
       flex-basis:85%;
+      padding-left: 1em;
     }
   }
 }

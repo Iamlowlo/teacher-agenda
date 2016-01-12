@@ -1,7 +1,6 @@
 @import 'components/ember-select';
 
 .form{
-  padding: 0 2em;
   @extend %column_container;
   @extend %clearfix;
   .field{
@@ -94,7 +93,7 @@
     }
     input{
       @include style-placeholder{
-        color:rgba($color_1,0.5);
+        color:rgba($polite_black,0.5);
       }
     }
   }

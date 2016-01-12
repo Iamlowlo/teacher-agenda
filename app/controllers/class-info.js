@@ -8,7 +8,9 @@ let Input = Ember.Object.extend({
 
 export default Ember.Controller.extend({
 	isCreationMode : false,
+	isEditionMode : false,
   classTag: '',
+  classTagActive: '',
   classField: '',
   inputFieldList: [],
 	actions: {
@@ -21,6 +23,10 @@ export default Ember.Controller.extend({
 				inputField.set('name',topics[i]);
 				this.get('inputFieldList').push(inputField);
 			};
+		},
+		openEditionMode : function(classinfoUnitId){
+			console.log(classinfoUnitId);
+			this.toggleProperty('isEditionMode');
 		},
 		addClassInfo : function(){
 			console.log(this.get('inputFieldList'));
