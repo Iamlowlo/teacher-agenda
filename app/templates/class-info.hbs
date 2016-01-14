@@ -4,47 +4,62 @@
 </div>
 <div class="main_container">
   <div class="classunit_info">
-    <dl class="regular_dl">
-      <dt>Type: </dt>
-      <dd>{{ model.classtype.name }}</dd>
-      <dt>Center: </dt>
-      <dd>{{ model.center.name }}</dd>
-      <dt>Alumn: </dt>
-      <dd>{{model.alumn.fullName}}</dd>
-      <dt>Day: </dt>
-      <dd>{{weekday model.day}}</dd>
-      <dt>Hour: </dt>
-      <dd>{{hour model.beginningTime}} to {{hour model.conclusionTime}}</dd>
+    <dl class="side_by_side_list">
+      <dt>Type: </dt>{{!-- 
+  --}}<dd>{{ model.classtype.name }}</dd>
+      <dt>Center: </dt>{{!-- 
+  --}}<dd>{{ model.center.name }}</dd>
+      <dt>Alumn: </dt>{{!-- 
+  --}}<dd>{{model.alumn.fullName}}</dd>
+      <dt>Day: </dt>{{!-- 
+  --}}<dd>{{weekday model.day}}</dd>
+      <dt>Hour: </dt>{{!-- 
+  --}}<dd>{{hour model.beginningTime}} to {{hour model.conclusionTime}}</dd>
     </dl>
     <ul class="class_list">
     {{#each model.classinfo as |classinfo|}}
-      {{classinfo-tag classinfo=classinfo isToggable=false isOpen=false classTag=classTag classTagActive=classTagActive}}
+      <li class="classinfoTag">
+        <span class="btn primary" {{action "getClassTag" classinfo}}>{{date classinfo.date}}</span>
+      </li>
+      {{!-- {{classinfo-tag classinfo=classinfo isToggable=false isOpen=false isEditing=isEditionMode classTag=classTag classTagActive=classTagActive}} --}}
     {{/each}}
     </ul>
   </div><!--
---><div class="classtag_info">
-    <dl class="regular_dl">
+--><div class="classtag_info side_by_side_list form">
+    <dl>
       {{#each classTag as |classTagInfo|}}
-      {{#if classTagInfo.content}}
         <dt class="{{inline-if classTagInfo.checked '' 'disabled'}}">
-        {{#if isEditionMode}}
-        {{input type='checkbox' name=classTagInfo.checked checked=classTagInfo.checked}}
-        {{/if}}
+        {{#if isEditionMode}} {{input type='checkbox' name=classTagInfo.checked checked=classTagInfo.checked}} {{/if}}
         {{classTagInfo.name}}
-        </dt>
-        <dd class="{{inline-if classTagInfo.checked '' 'disabled'}}">{{classTagInfo.content}}</dd>
-      {{/if}}
+        </dt>{{!-- 
+    --}}<dd class="{{inline-if classTagInfo.checked '' 'disabled'}}">{{classTagInfo.content}}</dd>
       {{/each}}
     </dl>
+    {{#if (or classComments.content isEditionMode)}}
+      <span class="title">{{classComments.name}}</span>{{!-- 
+  --}}<div class="content">
+        {{#unless isEditionMode}}
+          {{classComments.content}}
+        {{else}}
+          {{textarea value=classComments.content}}
+        {{/unless}}
+      </div>
+    {{/if}}
     {{#if classTag}}
     <div class="btn_group right">
+      {{#if isEditionMode}}
+      <span class="btn primary" {{action "saveChanges"}}>Accept</span>
+      <span class="btn alert" {{action "cancelEditionMode"}}>Cancel</span>
+      {{else}}
       <span class="icon-edit btn primary icon_rounded" {{action "openEditionMode" }}></span>
+      {{/if}}
     </div>
     {{/if}}
   </div>
 
   {{#if isCreationMode}}
   {{#validated-form submit=(action 'addClassInfo') saveBtn=true class="form add_classinfo_form"}}
+    {{#validated-field 'noEmpty' 'justNumbers' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">Date</span>{{input name="Date" value=Date placeholder='Date' required='required'}}{{/validated-field}}
     {{#each inputFieldList as |inputField|}}
     {{#unless (eq inputField.name 'Comments')}}
     {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">{{topic}}</span>{{input name="inputField.name" value=inputField.content placeholder=inputField.name required='required'}}{{/validated-field}}

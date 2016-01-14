@@ -12,5 +12,16 @@
   margin-bottom: 0.4em;
 }
 .add_classinfo_form{
-  margin-top: 2em;
+  margin-top: 3em;
+}
+.classtag_info{
+  dt{
+    position: relative;
+  }
+  input[type="checkbox"]{
+    position: absolute;
+    right: 100%;
+    margin-top: 0.2em;
+    margin-right: 0.5em;
+  }
 }
