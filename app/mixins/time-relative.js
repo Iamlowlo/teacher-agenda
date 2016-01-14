@@ -29,5 +29,11 @@ export default Ember.Mixin.create({
   },
   getTimestamp : function(hour,minutes){
     return new Date('0','0','0',hour,minutes).getTime();
+  },
+  getNextDayTimestamp : function(nextDay){
+    let result = new Date();
+    result = new Date(result.getFullYear(),result.getMonth(),result.getDate());
+    result.setDate(result.getDate() + ( 7 + nextDay+1 - result.getDay()) % 7);
+    return result.getTime();
   }
 });
