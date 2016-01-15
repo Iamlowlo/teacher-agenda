@@ -59,7 +59,7 @@
 
   {{#if isCreationMode}}
   {{#validated-form submit=(action 'addClassInfo') saveBtn=true class="form add_classinfo_form"}}
-    {{#validated-field 'noEmpty' 'justNumbers' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">Date</span>{{input name="Date" value=Date placeholder='Date' required='required'}}{{/validated-field}}
+    {{#validated-field 'noEmpty' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">Date</span>{{input name="Date" value=(date nextDay) placeholder='Date' disabled='disabled'}}{{/validated-field}}
     {{#each inputFieldList as |inputField|}}
     {{#unless (eq inputField.name 'Comments')}}
     {{#validated-field 'noEmpty' 'justText' class="col_xs_12_12 col_md_6_12"}}<span class="label_tag">{{topic}}</span>{{input name="inputField.name" value=inputField.content placeholder=inputField.name required='required'}}{{/validated-field}}
